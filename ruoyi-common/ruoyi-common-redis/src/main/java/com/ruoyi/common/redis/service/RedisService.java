@@ -42,7 +42,7 @@ public class RedisService
      * @param timeout 时间
      * @param timeUnit 时间颗粒度
      */
-    public <T> void setCacheObject(final String key, final T value, final Integer timeout, final TimeUnit timeUnit)
+    public <T> void setCacheObject(final String key, final T value, final Long timeout, final TimeUnit timeUnit)
     {
         redisTemplate.opsForValue().set(key, value, timeout, timeUnit);
     }
@@ -109,7 +109,7 @@ public class RedisService
      * 缓存List数据
      *
      * @param key 缓存的键值
-     * @param values 待缓存的List数据
+     * @param dataList 待缓存的List数据
      * @return 缓存的对象
      */
     public <T> long setCacheList(final String key, final List<T> dataList)
